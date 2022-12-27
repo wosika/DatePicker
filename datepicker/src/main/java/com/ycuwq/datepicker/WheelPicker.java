@@ -390,6 +390,9 @@ public class WheelPicker<T> extends View {
      * @return 修正后的值
      */
     private int fixItemPosition(int position) {
+        if (mDataList.isEmpty()){
+            return 0;
+        }
         if (position < 0) {
             //将数据集限定在0 ~ mDataList.size()-1之间
             position = mDataList.size() + (position % mDataList.size());
